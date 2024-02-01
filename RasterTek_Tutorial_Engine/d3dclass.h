@@ -35,7 +35,7 @@ public:
 	void ResetViewport();
 
 private:
-	bool m_sync_enabled;
+	bool m_vsync_enabled;
 	int m_videoCardMemory;
 	char m_videoCardDescription[128];
 	IDXGISwapChain* m_swapChain;
