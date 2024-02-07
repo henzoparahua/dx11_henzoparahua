@@ -56,5 +56,47 @@ bool ModelClass::InitializeBuffers(ID3D11Device* device)
 	D3D11_SUBRESOURCE_DATA vertexData, indexData;
 	HRESULT result;
 
-//	First create two temporary arrays
+//	First create two temporary arrays to hold the vertex and index data that we will use 
+//	later to populate the final buffers with.
+//	Set the number of vertices in the vertex array.
+	m_vertexCount = 3;
+
+//	Set the number of indices in the index array.
+	m_indexCount = 3;
+
+//	Create the vertex array.
+	vertices = new VertexType[m_vertexCount];
+	if (!vertices)
+	{
+		return false;
+	}
+
+//	Create the index array.
+	indices = new unsigned long[m_indexCount];
+	if (!indices)
+	{
+		return false;
+	}
+
+//	Now fill both the vertex and index array with the three points of the triangle as well as the
+//	index to each of the points. Please note that I created the points in the clockwise order of
+//	drawing them. If you do this counter clockwise it will think the triangle is facing the opposite
+//	direction and not draw it due to back face culling. Always remember that the order in which you
+//	send your vertices to the GPU is very important. The color is set here as well since it is part
+//	of the vertex description.
+
+//	Loaf the vertex array with data.
+	vertices[0].position = XMFLOAT3(-1.0f, -1.0f, 0.0f); // Bottom left.
+	vertices[0].color = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
+	
+	vertices[1].position = XMFLOAT3(0.0f, 1.0f, 0.0f); // Top middle.
+	vertices[1].color = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
+
+	vertices[2].position = XMFLOAT3(-1.0f, -1.0f, 0.0f); // Bottom right.
+	vertices[2].position = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
+
+//	Load the index array with data.
+	indices[0] = 0;
+	indices[1] = 1;
+	indices[2] = 2;
 }
