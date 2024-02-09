@@ -99,4 +99,115 @@ bool ModelClass::InitializeBuffers(ID3D11Device* device)
 	indices[0] = 0;
 	indices[1] = 1;
 	indices[2] = 2;
+
+//	With the vertex and index array fiddled out we can now use those to create the
+//	vertex buffer and index buffer. Creating both buffers is done in the same fashion.
+// 	First fill out a description of the buffer. In the description the ByteWidth (size
+// 	of the buffer) are what you need to ensure are filled out correctly. After the 
+// 	description is filled out you need to also fill out a subresource pointer which
+// 	will point to either your vertex or index array you previously created. With the
+// 	description and subresource pointer you can call CreateBuffer using D3D device and
+// 	it will return a pointer to your new buffer.
+	
+//	Set up the description of the static vertex buffer.
+	vertexBufferDesc.Usage = D3D11_USAGE_DEFAULT;
+	vertexBufferDesc.ByteWidth = sizeof(VertexType) * m_vertexCount;
+	vertexBufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+	vertexBufferDesc.CPUAccessFlags = 0;
+	vertexBufferDesc.MiscFlags = 0;
+	vertexBufferDesc.StructureByteStride = 0;
+
+//	Give the subresource structure a pointer to the vertex data.
+	vertexData.pSysMem = vertices;
+	vertexData.SysMemPitch = 0;
+	vertexData.SysMemSlicePitch = 0;
+
+//	Now create the vertex buffer.
+	result = device->CreateBuffer(&vertexBufferDesc, &vertexData, &m_vertexBuffer);
+	if (FAILED(result))
+	{
+		return false;
+	}
+
+//	Set up the description of the static index buffer.
+	indexBufferDesc.Usage = D3D11_USAGE_DEFAULT;
+	indexBufferDesc.ByteWidth = sizeof(unsigned long) * m_indexCount;
+	indexBufferDesc.BindFlags = D3D11_BIND_INDEX_BUFFER;
+	indexBufferDesc.CPUAcessFlags = 0;
+	indexBufferDesc.MiscFlags = 0;
+	indexBufferDesc.StructureByteStride = 0;
+
+//	Give the subresource structure a pointer to the index data.
+	indexData.pSysMem = indices;
+	indexData.SysMemPitch = 0;
+	indexData.SysMemSlicePitch = 0;
+
+//	Create the index buffer.
+	result = device->CreateBuffer(&indexBufferDesc, &indexData, &m_indexBuffer);
+	if (FAILED(result))
+	{
+		return false;
+	}
+
+//	After the vertex buffer and index buffer have been created you can delete
+//	the vertex and index arrays as theyre not longer needed since the data was
+//	copied into the buffers.
+
+//	Release the arrays now that the vertex and index buffers have been created and loaded.
+	delete[] vertices;
+	vertices = 0;
+	
+	delete[] indices;
+	indices = 0;
+
+	return true;
+}
+
+//	The ShutdownBuffers function just releases the vertex buffer and index
+//	buffer that were created in the InitializeBuffers function.
+
+void ModelClass::ShutdownBuffers() 
+{
+//	Release the index buffer.
+	if (m_indexBuffer)
+	{
+		m_indexBuffer->Release();
+		m_indexBuffer = 0;
+	}
+//	Release the vertex buffer.
+	if (m_vertexBuffer)
+	{
+		m_vertexBuffer->Release();
+		m_vertexBuffer = 0;
+	}
+	return;
+}
+
+//	RenderBuffer is called from the Render function. The purpose of this function is
+//	to set the vertex buffer and index buffer as active on the input assembler in the
+//	GPU. Once the GPU has an active vertex buffer it can then use the shader to render 
+//	that buffer. This function also defines how those buffers should be drawn such as
+//	triangles, lines, fans, and so forth. Here we set the vertex buffer and index buffer
+//	as active on the input assembler and tell the GPU that the buffers should be drawn as
+//	triangles using the IASetPrimitiveTopology DirectX function.
+
+void ModelClass::RenderBuffers(ID3D11DeviceContext* deviceContext)
+{
+	unsigned int stride;
+	unsigned int offset;
+
+//	Set the vertex buffer stride and offset.
+	stride = sizeof(VertexType);
+	offset = 0;
+
+//	Set the vertex buffer to active in the input assembler so it can be rendered.
+	deviceContext->IASetVertexBuffers(0, 1, &m_vertexBuffer, &stride, &offset);
+
+//	Set the index buffer to active in the input assembler so it can be rendered.
+	deviceContext->IASetIndexBuffer(m_indexBuffer, DXGI_FORMAT_R32_UINT, 0);
+
+//	Set the type of primitive that should be rendered from this vertex buffer in this case triangles.
+	deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	
+	return;
 }

@@ -1,2 +1,272 @@
-﻿  systemclass.cpp
-  RasterTek_Tutorial_Engine.vcxproj -> C:\Users\Clayton\source\repos\dx11_henzoparahua\x64\Debug\RastertekTutorial_Engine.exe
+﻿  cameraclass.cpp
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(3,1): error C2653: 'CameraClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(4,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(5,2): error C2065: 'm_positionX': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(6,2): error C2065: 'm_positionY': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(7,2): error C2065: 'm_positionZ': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(9,2): error C2065: 'm_rotationX': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(10,2): error C2065: 'm_rotationY': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(11,2): error C2065: 'm_rotationZ': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(12,1): warning C4508: 'CameraClass': function should return a value; 'void' return type assumed
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(13,1): error C2653: 'CameraClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(13,43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(13,43): error C2143: syntax error: missing ',' before '&'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(14,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(16,1): warning C4508: 'CameraClass': function should return a value; 'void' return type assumed
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(17,1): error C2653: 'CameraClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(18,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(20,1): warning C4508: '{dtor}': function should return a value; 'void' return type assumed
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(24,6): error C2653: 'CameraClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(26,2): error C2065: 'm_positionX': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(27,2): error C2065: 'm_positionY': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(28,2): error C2065: 'm_positionZ': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(32,6): error C2653: 'CameraClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(34,2): error C2065: 'm_rotationX': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(35,2): error C2065: 'm_rotationY': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(36,2): error C2065: 'm_rotationZ': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(41,10): error C2653: 'CameraClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(41,34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(41,23): error C2146: syntax error: missing ';' before identifier 'GetPosition'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(42,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\cameraclass.cpp(42,1): error C2447: '{': missing function header (old-style formal list?)
+  colorshaderclass.cpp
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(3,1): error C2653: 'ColorShaderClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(4,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(5,2): error C2065: 'm_vertexShader': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(6,2): error C2065: 'm_pixelShader': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(7,2): error C2065: 'm_layout': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(8,2): error C2065: 'm_matrixBuffer': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(9,1): warning C4508: 'ColorShaderClass': function should return a value; 'void' return type assumed
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(10,1): error C2653: 'ColorShaderClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(10,58): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(10,58): error C2143: syntax error: missing ',' before '&'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(11,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(12,1): warning C4508: 'ColorShaderClass': function should return a value; 'void' return type assumed
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(13,1): error C2653: 'ColorShaderClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(14,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(15,1): warning C4508: '{dtor}': function should return a value; 'void' return type assumed
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(17,6): error C2653: 'ColorShaderClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(17,35): error C2065: 'ID3D11Device': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(17,49): error C2065: 'device': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(17,57): error C2065: 'HWND': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(17,62): error C2146: syntax error: missing ')' before identifier 'hwnd'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(18,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(18,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(52,6): error C2653: 'ColorShaderClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(52,41): error C2065: 'ID3D11Device': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(52,55): error C2065: 'device': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(52,63): error C2065: 'HWND': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(52,68): error C2146: syntax error: missing ')' before identifier 'hwnd'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(53,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(53,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(211,6): error C2653: 'ColorShaderClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(214,6): error C2065: 'm_matrixBuffer': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(216,3): error C2065: 'm_matrixBuffer': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(217,3): error C2065: 'm_matrixBuffer': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(221,6): error C2065: 'm_layout': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(223,3): error C2065: 'm_layout': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(224,3): error C2065: 'm_layout': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(228,6): error C2065: 'm_pixelShader': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(230,3): error C2065: 'm_pixelShader': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(231,3): error C2065: 'm_pixelShader': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(235,6): error C2065: 'm_vertexShader': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(237,3): error C2065: 'm_vertexShader': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(238,3): error C2065: 'm_vertexShader': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(243,6): error C2653: 'ColorShaderClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(243,24): error C2182: 'OutputShaderErrorMessage': this use of 'void' is not valid
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(243,49): error C2065: 'ID3D10Blob': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(243,61): error C2065: 'errorMessage': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(243,75): error C2065: 'HWND': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(243,80): error C2146: syntax error: missing ')' before identifier 'hwnd'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(244,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(244,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(281,6): error C2653: 'ColorShaderClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(281,44): error C2065: 'ID3D11DeviceContext': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(281,65): error C2065: 'deviceContext': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(281,80): error C2065: 'XMMATRIX': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(281,89): error C2146: syntax error: missing ')' before identifier 'worldMatrix'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(283,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(283,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(325,6): error C2653: 'ColorShaderClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(325,24): error C2182: 'RenderShader': this use of 'void' is not valid
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(325,37): error C2065: 'ID3D11DeviceContext': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(325,58): error C2065: 'deviceContext': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(325,73): error C2062: type 'int' unexpected
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(326,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\colorshaderclass.cpp(326,1): error C2447: '{': missing function header (old-style formal list?)
+  modelclass.cpp
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(3,1): error C2653: 'ModelClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(4,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(5,2): error C2065: 'm_vertexBuffer': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(6,2): error C2065: 'm_indexBuffer': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(7,1): warning C4508: 'ModelClass': function should return a value; 'void' return type assumed
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(8,1): error C2653: 'ModelClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(8,40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(8,40): error C2143: syntax error: missing ',' before '&'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(9,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(10,1): warning C4508: 'ModelClass': function should return a value; 'void' return type assumed
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(11,1): error C2653: 'ModelClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(12,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(13,1): warning C4508: '{dtor}': function should return a value; 'void' return type assumed
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(14,6): error C2653: 'ModelClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(14,29): error C2065: 'ID3D11Device': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(14,43): error C2065: 'device': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(15,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(19,11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(19,2): error C2371: 'result': redefinition; different basic types
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(16,7):
+  see declaration of 'result'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(19,29): error C2065: 'device': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(19,11): error C3861: 'InitializeBuffers': identifier not found
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(20,2): error C2059: syntax error: 'if'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(21,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(21,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(24,2): error C2059: syntax error: 'return'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(25,1): error C2059: syntax error: '}'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(25,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(31,6): error C2653: 'ModelClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(32,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(32,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(42,5): error C2653: 'ModelClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(44,9): error C2065: 'm_indexCount': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(51,6): error C2653: 'ModelClass': is not a class or namespace name
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(51,36): error C2065: 'ID3D11Device': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(51,50): error C2065: 'device': undeclared identifier
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(52,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(53,12): error C2143: syntax error: missing ';' before '*'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(53,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(53,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(55,36): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(55,20): error C2146: syntax error: missing ';' before identifier 'vertexBufferDesc'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(56,35): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(56,25): error C2146: syntax error: missing ';' before identifier 'vertexData'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(57,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(57,10): error C2146: syntax error: missing ';' before identifier 'result'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(62,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(65,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(68,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(68,2): error C2040: 'vertices': 'int' differs in levels of indirection from 'int *'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(68,17): error C2061: syntax error: identifier 'VertexType'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(69,2): error C2059: syntax error: 'if'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(70,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(70,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(75,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(75,2): error C2040: 'indices': 'int' differs in levels of indirection from 'unsigned long *'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(76,2): error C2059: syntax error: 'if'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(77,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(77,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(89,2): error C2466: cannot allocate an array of constant size 0
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(89,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(89,13): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(89,14): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(89,23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(89,2): error C2372: 'vertices': redefinition; different types of indirection
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(53,14):
+  see declaration of 'vertices'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(89,14): error C2146: syntax error: missing ';' before identifier 'position'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(90,2): error C2466: cannot allocate an array of constant size 0
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(90,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(90,13): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(90,14): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(90,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(90,2): error C2372: 'vertices': redefinition; different types of indirection
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(53,14):
+  see declaration of 'vertices'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(90,14): error C2146: syntax error: missing ';' before identifier 'color'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(92,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(92,13): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(92,14): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(92,23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(92,2): error C2372: 'vertices': redefinition; different types of indirection
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(53,14):
+  see declaration of 'vertices'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(92,14): error C2146: syntax error: missing ';' before identifier 'position'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(93,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(93,13): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(93,14): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(93,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(93,2): error C2372: 'vertices': redefinition; different types of indirection
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(53,14):
+  see declaration of 'vertices'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(93,14): error C2146: syntax error: missing ';' before identifier 'color'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(95,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(95,13): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(95,14): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(95,23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(95,2): error C2372: 'vertices': redefinition; different types of indirection
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(53,14):
+  see declaration of 'vertices'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(95,14): error C2146: syntax error: missing ';' before identifier 'position'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(96,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(96,13): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(96,14): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(96,23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(96,2): error C2372: 'vertices': redefinition; different types of indirection
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(53,14):
+  see declaration of 'vertices'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(96,14): error C2146: syntax error: missing ';' before identifier 'position'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(99,2): error C2466: cannot allocate an array of constant size 0
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(99,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(99,2): error C2372: 'indices': redefinition; different types of indirection
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(54,17):
+  see declaration of 'indices'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(100,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(100,2): error C2372: 'indices': redefinition; different types of indirection
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(54,17):
+  see declaration of 'indices'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(101,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(101,2): error C2372: 'indices': redefinition; different types of indirection
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(54,17):
+  see declaration of 'indices'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(113,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(113,18): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(113,19): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(113,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(113,19): error C2146: syntax error: missing ';' before identifier 'Usage'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(114,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(114,18): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(114,19): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(114,29): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(114,2): error C2086: 'int vertexBufferDesc': redefinition
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(113,2):
+  see declaration of 'vertexBufferDesc'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(114,19): error C2146: syntax error: missing ';' before identifier 'ByteWidth'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(115,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(115,18): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(115,19): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(115,29): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(115,2): error C2086: 'int vertexBufferDesc': redefinition
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(113,2):
+  see declaration of 'vertexBufferDesc'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(115,19): error C2146: syntax error: missing ';' before identifier 'BindFlags'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(116,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(116,18): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(116,19): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(116,34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(116,2): error C2086: 'int vertexBufferDesc': redefinition
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(113,2):
+  see declaration of 'vertexBufferDesc'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(116,19): error C2146: syntax error: missing ';' before identifier 'CPUAccessFlags'
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(117,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(117,18): error C3484: syntax error: expected '->' before the return type
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(117,19): error C3613: missing return type after '->' ('int' assumed)
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(117,29): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(117,2): error C2086: 'int vertexBufferDesc': redefinition
+  C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(113,2):
+  see declaration of 'vertexBufferDesc'
+  
+C:\Users\Clayton\source\repos\dx11_henzoparahua\RasterTek_Tutorial_Engine\modelclass.cpp(117,2): error C1003: error count exceeds 100; stopping compilation
+  Generating Code...
