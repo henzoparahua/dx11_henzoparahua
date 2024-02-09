@@ -67,7 +67,7 @@ void ApplicationClass::Shutdown()
 	if (m_ColorShader)
 	{
 		m_ColorShader->Shutdown();
-		delete m_ColorShader();
+		delete m_ColorShader;
 		m_ColorShader = 0;
 	}
 //	Release the model object.
@@ -120,7 +120,31 @@ bool ApplicationClass::Frame()
 //	we call EndScene to display it to the screen.
 bool ApplicationClass::Render()
 {
-	m_Direct3D->BeginScene(0.5f, 0.5f, 0.5f, 1.0f);
+	XMMATRIX worldMatrix, viewMatrix, projectionMatrix;
+	bool result;
+
+//	Clear the buffers to begin the scene.
+	m_Direct3D->BeginScene(0.0f, 0.0f, 0.0f, 1.0f);
+
+//	Generate the view matrix basd on the camera's position.
+	m_Camera->Render();
+
+//	Get the world, view and projection matrices from the camera and d3d objects.
+	m_Direct3D->GetWorldMatrix(worldMatrix);
+	m_Camera->GetViewMatrix(viewMatrix);
+	m_Direct3D->GetProjectionMatrix(projectionMatrix);
+
+//	Put the model vertex and index buffers on the graphics pipeline to prepare them for drawing.
+	m_Model->Render(m_Direct3D->GetDeviceContext());
+
+//	Render the model using the color shader.
+	result = m_ColorShader->Render(m_Direct3D->GetDeviceContext(), m_Model->GetIndexCount(), worldMatrix, viewMatrix, projectionMatrix);
+	if (!result)
+	{
+		return false;
+	}
+
+//	Present the rendered scene to the screen.
 	m_Direct3D->EndScene();
 	return true;
 }

@@ -1,4 +1,4 @@
-#ifdef _CAMERACLASS_H_
+#ifndef _CAMERACLASS_H_
 #define _CAMERACLASS_H_
 
 #include <DirectXMath.h>

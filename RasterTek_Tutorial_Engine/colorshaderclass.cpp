@@ -21,14 +21,14 @@ bool ColorShaderClass::Initialize(ID3D11Device* device, HWND hwnd)
 	wchar_t psFilename[128];
 	int error;
 
-	error = wcscpy_s(vsFilename, 128, L"../Engine/color.vs");
+	error = wcscpy_s(vsFilename, 128, L"color.vs");
 	if (error != 0)
 	{
 		return false;
 	}
 
 	//	Set the filename of the pixel shader.
-	error = wcscpy_s(psFilename, 128, L"../Engine/color.ps");
+	error = wcscpy_s(psFilename, 128, L"color.ps");
 	if (error != 0)
 	{
 		return false;
@@ -40,6 +40,33 @@ bool ColorShaderClass::Initialize(ID3D11Device* device, HWND hwnd)
 	{
 		return false;
 	}
+	return true;
+}
+
+void ColorShaderClass::Shutdown()
+{
+// Shutdown the vertex and pixel shaders as well as the related objects.
+	ShutdownShader();
+
+	return;
+}
+
+bool ColorShaderClass::Render(ID3D11DeviceContext* deviceContext, int indexCount, XMMATRIX worldMatrix, XMMATRIX viewMatrix,
+	XMMATRIX projectionMatrix)
+{
+	bool result;
+
+
+// Set the shader parameters that it will use for rendering.
+	result = SetShaderParameters(deviceContext, worldMatrix, viewMatrix, projectionMatrix);
+	if (!result)
+	{
+		return false;
+	}
+
+// Now render the prepared buffers with the shader.
+	RenderShader(deviceContext, indexCount);
+
 	return true;
 }
 
@@ -82,7 +109,7 @@ bool ColorShaderClass::InitializeShader(ID3D11Device* device, HWND hwnd, WCHAR* 
 		//	If the shader failed to compile it should have written something to the error message.
 		if (errorMessage)
 		{
-			OutputShaderErrorMessage(errorMessage, vsFilename);
+			OutputShaderErrorMessage(errorMessage, hwnd, vsFilename);
 		}
 		else
 		{
@@ -227,7 +254,7 @@ void ColorShaderClass::ShutdownShader()
 //	Release the pixel shader.
 	if (m_pixelShader)
 	{
-		m_pixelShader->Releae();
+		m_pixelShader->Release();
 		m_pixelShader = 0;
 	}
 
@@ -247,7 +274,7 @@ void ColorShaderClass::OutputShaderErrorMessage(ID3D10Blob* errorMessage, HWND h
 	ofstream fout;
 
 //	Get a pointer to the error message text buffer.
-	compileErrors = (char*)(errorMessage->GetBuffersPointer());
+	compileErrors = (char*)(errorMessage->GetBufferPointer());
 
 //	Get the length of the message.
 	bufferSize = errorMessage->GetBufferSize();
@@ -258,7 +285,7 @@ void ColorShaderClass::OutputShaderErrorMessage(ID3D10Blob* errorMessage, HWND h
 //	Write out the error message.
 	for (i = 0; i < bufferSize; i++) 
 	{
-		fout << compileError[i];
+		fout << compileErrors[i];
 	}
 
 //	Close the file.

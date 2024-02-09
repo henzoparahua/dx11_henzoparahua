@@ -24,6 +24,16 @@ bool ModelClass::Initialize(ID3D11Device* device)
 	return true;
 }
 
+
+void ModelClass::Shutdown()
+{
+	// Shutdown the vertex and index buffers.
+	ShutdownBuffers();
+
+	return;
+}
+
+
 //	Render is called from the ApplicationClass::Render function. This function calls
 //	RenderBuffers to put the vertex and index buffers on the graphics pipeline so the 
 //	color shaders will be able to render them.
@@ -93,7 +103,7 @@ bool ModelClass::InitializeBuffers(ID3D11Device* device)
 	vertices[1].color = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
 
 	vertices[2].position = XMFLOAT3(-1.0f, -1.0f, 0.0f); // Bottom right.
-	vertices[2].position = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
+	vertices[2].color = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
 
 //	Load the index array with data.
 	indices[0] = 0;
@@ -133,7 +143,7 @@ bool ModelClass::InitializeBuffers(ID3D11Device* device)
 	indexBufferDesc.Usage = D3D11_USAGE_DEFAULT;
 	indexBufferDesc.ByteWidth = sizeof(unsigned long) * m_indexCount;
 	indexBufferDesc.BindFlags = D3D11_BIND_INDEX_BUFFER;
-	indexBufferDesc.CPUAcessFlags = 0;
+	indexBufferDesc.CPUAccessFlags = 0;
 	indexBufferDesc.MiscFlags = 0;
 	indexBufferDesc.StructureByteStride = 0;
 

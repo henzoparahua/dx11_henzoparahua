@@ -3,11 +3,13 @@
 //	then set them externally for the shaders program to use. Generally, you will put most
 //	globals in buffer object types called "cbuffer" even if it is just a single global 
 //	variable.
+
+
 cbuffer MatrixBuffer
 {
 	matrix worldMatrix;
 	matrix viewMatrix;
-	matrix projectionMatrix
+	matrix projectionMatrix;
 };
 
 

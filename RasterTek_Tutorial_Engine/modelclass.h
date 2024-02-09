@@ -1,4 +1,4 @@
-#ifdef _MODELCLASS_H_
+#ifndef _MODELCLASS_H_
 #define _MODELCLASS_H_
 
 #include <d3d11.h>
@@ -27,6 +27,11 @@ public:
 	void Render(ID3D11DeviceContext*);
 
 	int GetIndexCount();
+
+private:
+	bool InitializeBuffers(ID3D11Device*);
+	void ShutdownBuffers();
+	void RenderBuffers(ID3D11DeviceContext*);
 
 private:
 	ID3D11Buffer *m_vertexBuffer, *m_indexBuffer;

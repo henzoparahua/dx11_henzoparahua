@@ -63,7 +63,7 @@ void CameraClass::Render()
 
 //	Setup the vector that points upwards.
 	up.x = 0.0f;
-	up.y = 0.0f;
+	up.y = 1.0f;
 	up.z = 0.0f;
 
 //	Load it into a XMVECTOR structure.
@@ -73,6 +73,14 @@ void CameraClass::Render()
 	position.x = m_positionX;
 	position.y = m_positionY;
 	position.z = m_positionZ;
+
+// Load it into a XMVECTOR structure.
+	positionVector = XMLoadFloat3(&position);
+
+// Setup where the camera is looking by default.
+	lookAt.x = 0.0f;
+	lookAt.y = 0.0f;
+	lookAt.z = 1.0f;
 
 //	Load it into a XMVECTOR structure.
 	lookAtVector = XMLoadFloat3(&lookAt);

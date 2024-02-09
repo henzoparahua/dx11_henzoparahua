@@ -24,8 +24,9 @@ public:
 
 private:
 	bool Render();
-	D3DClass* m_Direct3D;
 
+private:
+	D3DClass* m_Direct3D;
 	CameraClass* m_Camera;
 	ModelClass* m_Model;
 	ColorShaderClass* m_ColorShader;
