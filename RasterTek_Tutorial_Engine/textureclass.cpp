@@ -238,3 +238,14 @@ bool TextureClass::LoadTarga32Bit(char* filename)
 
 	return true;
 }
+
+int TextureClass::GetWidth() 
+{
+	return m_width;
+}
+
+int TextureClass::GetHeight()
+{
+	return m_height;
+}
+
