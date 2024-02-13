@@ -86,7 +86,6 @@ bool ColorShaderClass::InitializeShader(ID3D11Device* device, HWND hwnd, WCHAR* 
 	unsigned int numElements;
 	D3D11_BUFFER_DESC matrixBufferDesc;
 
-
 	//	Initialize the pointers this function will use to null.
 	errorMessage = 0;
 	vertexShaderBuffer = 0;
@@ -231,12 +230,13 @@ bool ColorShaderClass::InitializeShader(ID3D11Device* device, HWND hwnd, WCHAR* 
 	{
 		return false;
 	}
-	return true;
+
 }
 
 //	ShutdownShader releases four iunterfaces that were setup in the Initialize Shader function.
 void ColorShaderClass::ShutdownShader()
 {
+
 //	Release the matrix constant buffer.
 	if (m_matrixBuffer)
 	{
