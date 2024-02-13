@@ -365,6 +365,7 @@ bool TextureShaderClass::SetShaderParameters(ID3D11DeviceContext* deviceContext,
 //	RenderShader calls the shader technique to render the polygons.
 void TextureShaderClass::RenderShader(ID3D11DeviceContext* deviceContext, int indexCount)
 {
+	deviceContext->IASetInputLayout(m_layout);
 //	Set the vertex input layout.
 	deviceContext->VSSetShader(m_vertexShader, NULL, 0);
 	deviceContext->PSSetShader(m_pixelShader, NULL, 0);
