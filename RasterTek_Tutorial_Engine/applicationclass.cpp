@@ -61,9 +61,9 @@ bool ApplicationClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 */
 //	The ModelClass::Initialize function now takes in the name of the texture that will be used for
 //	rendering the models as well as the device context.
+// Set the name of the texture file that we will be loading.
+	strcpy_s(textureFilename, "stone.tga");
 
-//	Set the name of the texture file that we will be loading.
-	strcpy_s(textureFilename, "stone01.tga");
 	result = m_Model->Initialize(m_Direct3D->GetDevice(), m_Direct3D->GetDeviceContext(), textureFilename);
 	if (!result)
 	{

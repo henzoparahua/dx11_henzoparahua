@@ -81,4 +81,9 @@
     <None Include="texture.vs" />
     <None Include="texture.ps" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Downloads\stone.tga">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
