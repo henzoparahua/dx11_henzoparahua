@@ -86,10 +86,10 @@ bool ModelClass::InitializeBuffers(ID3D11Device* device)
 //	First create two temporary arrays to hold the vertex and index data that we will use 
 //	later to populate the final buffers with.
 //	Set the number of vertices in the vertex array.
-	m_vertexCount = 4;
+	m_vertexCount = 3;
 
 //	Set the number of indices in the index array.
-	m_indexCount = 4;
+	m_indexCount = 3;
 
 //	Create the vertex array.
 	vertices = new VertexType[m_vertexCount];
@@ -100,10 +100,6 @@ bool ModelClass::InitializeBuffers(ID3D11Device* device)
 
 //	Create the index array.
 	indices = new unsigned long[m_indexCount];
-	if (!indices)
-	{
-		return false;
-	}
 
 //	Now fill both the vertex and index array with the three points of the triangle as well as the
 //	index to each of the points. Please note that I created the points in the clockwise order of

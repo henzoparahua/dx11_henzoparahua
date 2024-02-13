@@ -30,9 +30,6 @@
     <ClCompile Include="d3dclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="colorshaderclass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="modelclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -59,9 +56,6 @@
     <ClInclude Include="d3dclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="colorshaderclass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="modelclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -76,13 +70,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="color.vs" />
-    <None Include="color.ps" />
     <None Include="texture.vs" />
     <None Include="texture.ps" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\stone.tga">
+    <Image Include="stone.tga">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -78,7 +78,7 @@ bool TextureShaderClass::Render(ID3D11DeviceContext* deviceContext, int indexCou
 //	Now render the prepared buffer with the shader.
 	RenderShader(deviceContext, indexCount);
 	
-	return false;
+	return true;
 }
 
 //	InitializeShader sets up the texture shader.
