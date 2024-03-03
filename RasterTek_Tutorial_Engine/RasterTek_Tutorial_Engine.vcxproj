@@ -40,6 +40,8 @@
     <ClInclude Include="textureshaderclass.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="light.ps" />
+    <None Include="light.vs" />
     <None Include="texture.ps" />
     <None Include="texture.vs" />
   </ItemGroup>

@@ -1,5 +1,7 @@
 #include "applicationclass.h"
 
+bool FULL_SCREEN = false;
+
 ApplicationClass::ApplicationClass()
 {
 	m_Direct3D = 0;
@@ -17,6 +19,20 @@ ApplicationClass::~ApplicationClass()
 {
 
 }
+
+bool ApplicationClass::ChangeScreen(int screenWidth, int screenHeight, HWND hwnd)
+{
+	if (FULL_SCREEN == false) {
+		FULL_SCREEN = true;
+	}
+	else {
+		FULL_SCREEN = false;
+	}
+	
+	return true; 
+}
+
+
 
 bool ApplicationClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 {
@@ -37,7 +53,7 @@ bool ApplicationClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	m_Camera = new CameraClass;
 
 //	Set the initial position of the camera.
-	m_Camera->SetPosition(0.0f, 0.0f, -5.0f);
+	m_Camera->SetPosition(0.0f, 1.0f, -7.0f);
 
 //	Create and initialize the model object.
 	m_Model = new ModelClass;

@@ -5,12 +5,14 @@ int WINAPI WinMain(HINSTANCE hInstace, HINSTANCE hPrevInstance, PSTR pScmdline, 
 	SystemClass* System;
 	bool result;
 
+
 	System = new SystemClass;
 
 	result = System->Initialize();
 	if (result) {
 		System->Run();
 	}
+
 
 	System->Shutdown();
 	delete System;

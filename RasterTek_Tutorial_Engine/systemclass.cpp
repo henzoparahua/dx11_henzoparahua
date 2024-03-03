@@ -1,6 +1,5 @@
 #include "systemclass.h"
 
-
 SystemClass::SystemClass()
 {
 	m_Input = 0;
@@ -16,7 +15,6 @@ SystemClass::SystemClass(const SystemClass& other)
 SystemClass::~SystemClass()
 {
 }
-
 
 bool SystemClass::Initialize()
 {
@@ -118,12 +116,18 @@ bool SystemClass::Frame()
 {
 	bool result;
 
-
 // Check if the user pressed escape and wants to exit the application.
 	if (m_Input->IsKeyDown(VK_ESCAPE))
 	{
 		return false;
 	}
+
+	if (m_Input->IsKeyDown(VK_SPACE))
+	{
+		FULL_SCREEN ? FULL_SCREEN = false : FULL_SCREEN = true;
+	}
+
+
 
 // Do the frame processing for the application object.
 	result = m_Application->Frame();
@@ -179,7 +183,7 @@ void SystemClass::InitializeWindows(int& screenWidth, int& screenHeight)
 	m_hinstance = GetModuleHandle(NULL);
 
 // Give the application a name.
-	m_applicationName = L"Engine";
+	m_applicationName = L"Engine del Henzoparahua by RastertekTutorials";
 
 // Setup the windows class with default settings.
 	wc.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
@@ -241,7 +245,7 @@ void SystemClass::InitializeWindows(int& screenWidth, int& screenHeight)
 	SetFocus(m_hwnd);
 
 // Hide the mouse cursor.
-	ShowCursor(false);
+	ShowCursor(true);
 
 	return;
 }
