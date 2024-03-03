@@ -72,6 +72,12 @@
   <ItemGroup>
     <None Include="texture.vs" />
     <None Include="texture.ps" />
+    <None Include="light.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="light.ps">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="stone.tga">
