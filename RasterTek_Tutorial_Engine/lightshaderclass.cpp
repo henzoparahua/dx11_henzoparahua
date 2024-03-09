@@ -263,3 +263,82 @@ void LightShaderClass::ShutdownShader()
 
 	return;
 }
+
+void LightShaderClass::OutputShaderErrorMessage(ID3D10Blob* errorMessage, HWND hwnd, WCHAR* shaderFilename)
+{
+	char* compileErrors;
+	unsigned __int64 bufferSize, i;
+	ofstream fout;
+
+//	Get a pointer to the error message text buffer.
+	compileErrors = (char*)(errorMessage->GetBufferPointer());
+
+//	Get a length of the message.
+	bufferSize = errorMessage->GetBufferSize();
+
+//	Open a file to write the error message to.
+	fout.open("shader-error.txt");
+
+//	Write out the error message.
+	for (i = 0; i < bufferSize; i++)
+	{
+		fout << compileErrors[i];
+	}
+
+//	Close the file.
+	fout.close();
+
+//	Release the error message.
+	errorMessage->Release();
+	errorMessage = 0;
+
+//	Pop a message up on the screen to notify the user to check the text file for copile errors.
+	MessageBox(hwnd, L"Error compiling shader. Check shader-error.txt for message.", shaderFilename, MB_OK);
+
+	return;
+}
+
+bool LightShaderClass::SetShaderParameters(ID3D11DeviceContext* deviceContext,
+	XMMATRIX worldMatrix, XMMATRIX viewMatrix, XMMATRIX projectionMatrix, ID3D11ShaderResourceView* texture,
+	XMFLOAT3 lightDirection, XMFLOAT4 diffuseColor)
+{
+	HRESULT result;
+	D3D11_MAPPED_SUBRESOURCE mappedResource;
+	unsigned int bufferNumber;
+	MatrixBufferType* dataPtr;
+	LightBufferType* dataPtr2;
+
+//	Transpose the matrices to prepare them for the shader.
+	worldMatrix = XMMatrixTranspose(worldMatrix);
+	viewMatrix = XMMatrixTranspose(viewMatrix);
+	projectionMatrix = XMMatrixTranspose(projectionMatrix);
+
+//	Lock the constant buffer so it can be written to.
+	result = deviceContext->Map(m_matrixBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
+	if (FAILED(result))
+	{
+		return false;
+	}
+
+//	Get a pointer to the data in the contant buffer.
+	dataPtr = (MatrixBufferType*)mappedResource.pData;
+
+//	Copy the matrices into the constant buffer..
+	dataPtr->world = worldMatrix;
+	dataPtr->view = viewMatrix;
+	dataPtr->projection = projectionMatrix;
+
+//	Unlock the constant buffer.
+	deviceContext->Unmap(m_matrixBuffer, 0);
+
+//	Set the position of the constant buffer in the vertex shader.
+	bufferNumber = 0;
+
+//	Now set the constant buffer in the vertex shader with the updated values.
+	deviceContext->VSSetConstantBuffers(bufferNumber, 1, &m_matrixBuffer);
+
+//	Set shader texture resource in the pixel shader.
+	deviceContext->PSSetShaderResources(0, 1, &texture);
+
+
+}
