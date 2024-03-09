@@ -1,10 +1,12 @@
-#ifdef _LIGHTSHADERCLASS_H_
+#ifndef _LIGHTSHADERCLASS_H_
 #define _LIGHTSHADERCLASS_H_
 
 #include <d3d11.h>
 #include <d3dcompiler.h>
-#include <DirectXMath.h>
+#include <directxmath.h>
 #include <fstream>
+using namespace DirectX;
+using namespace std;
 
 class LightShaderClass
 {
@@ -35,6 +37,11 @@ public:
 	LightShaderClass(const LightShaderClass&);
 	~LightShaderClass();
 
+	bool Initialize(ID3D11Device*, HWND);
+	void Shutdown();
+	bool Render(ID3D11DeviceContext*, int, XMMATRIX, XMMATRIX, XMMATRIX, ID3D11ShaderResourceView*, XMFLOAT3, XMFLOAT4);
+
+private:
 	bool InitializeShader(ID3D11Device*, HWND, WCHAR*, WCHAR*);
 	void ShutdownShader();
 	void OutputShaderErrorMessage(ID3D10Blob*, HWND, WCHAR*);
