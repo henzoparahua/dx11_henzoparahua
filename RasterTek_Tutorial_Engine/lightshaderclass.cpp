@@ -340,5 +340,19 @@ bool LightShaderClass::SetShaderParameters(ID3D11DeviceContext* deviceContext,
 //	Set shader texture resource in the pixel shader.
 	deviceContext->PSSetShaderResources(0, 1, &texture);
 
+//	The light constant buffer is setup the same way as the matrix constant buffer. We first lock 
+//	the buffer and get a pointer to it. After that we set the diffuse color and light direction
+// 	using that pointer. Once the data is set, we unlock the buffer and then set it in the pixel
+// 	shader. Note that we use the PSSetConstantBuffers function instead of VSSetConstantBuffers
+// 	since this is a pxel shader buffer we are setting.
 
+//	Lock the light constant buffer so it can be written to.
+	result = deviceContext->Map(m_lightBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
+	if (FAILED(result))
+	{
+		return false;
+	}
+
+//	Get a pointer to the data in the constant buffer.
+	dataPtr2 = (LightBufferType*)mappedResource.pData;
 }
