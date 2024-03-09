@@ -122,12 +122,6 @@ bool SystemClass::Frame()
 		return false;
 	}
 
-	if (m_Input->IsKeyDown(VK_SPACE))
-	{
-		FULL_SCREEN ? FULL_SCREEN = false : FULL_SCREEN = true;
-	}
-
-
 
 // Do the frame processing for the application object.
 	result = m_Application->Frame();
