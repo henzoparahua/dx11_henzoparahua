@@ -120,6 +120,21 @@ void ApplicationClass::Shutdown()
 	}
 */
 
+// Release the light object.
+	if (m_Light)
+	{
+		delete m_Light;
+		m_Light = 0;
+	}
+
+// Release the light shader object.
+	if (m_LightShader)
+	{
+		m_LightShader->Shutdown();
+		delete m_LightShader;
+		m_LightShader = 0;
+	}
+
 //	Release the model object.
 	if (m_Model)
 	{
@@ -146,9 +161,18 @@ void ApplicationClass::Shutdown()
 
 bool ApplicationClass::Frame()
 {
+	static float rotation = 0.0f;
 	bool result;
 
-	result = Render();
+//	Update the rotation variable each frame.
+	rotation -= 0.0174532925f * 0.1f;
+	if (rotation < 0.0f)
+	{
+		rotation += 360.0f;
+	}
+//	Render the graphics scene.
+
+	result = Render(rotation);
 	if (!result)
 	{
 		return false;
@@ -168,7 +192,7 @@ bool ApplicationClass::Frame()
 //	vertices using the model information and the three matrices for positioning each vertex.
 //	The green triangle is now drawn to the back buffer. With that the scene is complete and
 //	we call EndScene to display it to the screen.
-bool ApplicationClass::Render()
+bool ApplicationClass::Render(float rotation)
 {
 	XMMATRIX worldMatrix, viewMatrix, projectionMatrix;
 	bool result;
@@ -184,12 +208,18 @@ bool ApplicationClass::Render()
 	m_Camera->GetViewMatrix(viewMatrix);
 	m_Direct3D->GetProjectionMatrix(projectionMatrix);
 
+//	Here we rotate the world matrix by the rotation value so that when we render the triangle
+//	using this updated world matrix it will spin the triangle by the rotation amount.
+
+//	Rotate the world matrix by the rotation value so that the triangle will spin.
+	worldMatrix = XMMatrixRotationY(rotation);
+
 //	Put the model vertex and index buffers on the graphics pipeline to prepare them for drawing.
 	m_Model->Render(m_Direct3D->GetDeviceContext());
 
 //	Render the model using the color shader.
-	result = m_TextureShader->Render(m_Direct3D->GetDeviceContext(), m_Model->GetIndexCount(), 
-		worldMatrix, viewMatrix, projectionMatrix, m_Model->GetTexture());
+	result = m_LightShader->Render(m_Direct3D->GetDeviceContext(), m_Model->GetIndexCount(), worldMatrix, viewMatrix, 
+		projectionMatrix, m_Model->GetTexture(), m_Light->GetDirection(), m_Light->GetDiffuseColor());
 	if (!result)
 	{
 		return false;

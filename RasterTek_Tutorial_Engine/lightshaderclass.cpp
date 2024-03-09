@@ -63,15 +63,15 @@ void LightShaderClass::Shutdown()
 //	color as inputs. These variables are then sent into the SetShaderParameters
 //	function and finally set inside the shader itself.
 
-bool LightShaderClass::Render(ID3D11DeviceContext* deviceContext, int indexCount,
-	XMMATRIX worldMatrix, XMMATRIX viewMatrix, XMMATRIX projectionMatrix,
-	ID3D11ShaderResourceView* texture, XMFLOAT3 lightDirection, XMFLOAT4 diffuseColor)
+bool LightShaderClass::Render(ID3D11DeviceContext* deviceContext, int indexCount, XMMATRIX worldMatrix, 
+	XMMATRIX viewMatrix, XMMATRIX projectionMatrix, ID3D11ShaderResourceView* texture, XMFLOAT3 lightDirection, 
+	XMFLOAT4 diffuseColor)
 {
 	bool result;
 
 //	Set the shader parameters that it will use for rendering.
-	result = SetShaderParameters(deviceContext, worldMatrix, viewMatrix, projectionMatrix, 
-		texture, lightDirection, diffuseColor);
+	result = SetShaderParameters(deviceContext, worldMatrix, viewMatrix, 
+		projectionMatrix, texture, lightDirection, diffuseColor);
 	if (!result)
 	{
 		return false;
@@ -122,11 +122,29 @@ bool LightShaderClass::InitializeShader(ID3D11Device* device, HWND hwnd, WCHAR* 
 //	shader file itself.
 		else
 		{
-			MessageBox(hwnd, psFilename, L"Missing shader file", MB_OK);
+			MessageBox(hwnd, vsFilename, L"Missing shader file", MB_OK);
 		}
 		return false;
 	}
+//	Compile the pixel shader code.
 
+	result = D3DCompileFromFile(psFilename, NULL, NULL, "LightPixelShader", "ps_5_0",
+		D3D10_SHADER_ENABLE_STRICTNESS, 0, &pixelShaderBuffer, &errorMessage);
+
+	if(FAILED(result)){
+
+//	If the shader failed to compile it should have writen something to the error message.
+	if (errorMessage)
+	{
+		OutputShaderErrorMessage(errorMessage, hwnd, psFilename);
+	}
+	else
+	{
+		MessageBox(hwnd, psFilename, L"Missing Shader File", MB_OK);
+	}
+	return true;
+	
+	}
 //	Create the vertex shader from the buffer
 	result = device->CreateVertexShader(vertexShaderBuffer->GetBufferPointer(),
 		vertexShaderBuffer->GetBufferSize(), NULL, &m_vertexShader);
@@ -208,6 +226,13 @@ bool LightShaderClass::InitializeShader(ID3D11Device* device, HWND hwnd, WCHAR* 
 	samplerDesc.MinLOD = 0;
 	samplerDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
+//	Create the texture sampler state.
+	result = device->CreateSamplerState(&samplerDesc, &m_sampleState);
+	if (FAILED(result))
+	{
+		return false;
+	}
+
 //	Create the description of the dynamic matrix constant buffer that is in the vertex shader.
 	matrixBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
 	matrixBufferDesc.ByteWidth = sizeof(MatrixBufferType);
@@ -215,6 +240,22 @@ bool LightShaderClass::InitializeShader(ID3D11Device* device, HWND hwnd, WCHAR* 
 	matrixBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 	matrixBufferDesc.MiscFlags = 0;
 	matrixBufferDesc.StructureByteStride = 0;
+
+//	Setup the description of the dynamic matrix constant buffer that is in the vertex shader.
+	result = device->CreateBuffer(&matrixBufferDesc, NULL, &m_matrixBuffer);
+	if (FAILED(result))
+	{
+		return false;
+	}
+
+//	Setup the description of the light dynamic constant buffer that is in the pixel shader.
+// 	Note that ByteWidth always needds to b e multiple of 16 if using D3D11_BIND_CONSTANT_BUFFER or CreateBuffer will fail.
+	lightBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
+	lightBufferDesc.ByteWidth = sizeof(LightBufferType);
+	lightBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+	lightBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+	lightBufferDesc.MiscFlags = 0;
+	lightBufferDesc.StructureByteStride = 0;
 
 //	Create the constant buffer pointer so we can access the vertex shader constant buffer from within this class.
 	result = device->CreateBuffer(&lightBufferDesc, NULL, &m_lightBuffer);
