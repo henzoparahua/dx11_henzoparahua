@@ -1,13 +1,15 @@
 #include "applicationclass.h"
 
-bool FULL_SCREEN = false;
-
 ApplicationClass::ApplicationClass()
 {
 	m_Direct3D = 0;
 	m_Camera = 0;
 	m_Model = 0;
-	m_TextureShader = 0;
+//	TextureShader = 0;
+
+//	The light shader and light object are set to null in the class constructor
+	m_LightShader = 0;
+	m_Light = 0;
 }
 
 ApplicationClass::ApplicationClass(const ApplicationClass& other)
@@ -19,19 +21,6 @@ ApplicationClass::~ApplicationClass()
 {
 
 }
-
-bool ApplicationClass::ChangeScreen(int screenWidth, int screenHeight, HWND hwnd)
-{
-	if (FULL_SCREEN == false) {
-		FULL_SCREEN = true;
-	}
-	else {
-		FULL_SCREEN = false;
-	}
-	
-	return true; 
-}
-
 
 
 bool ApplicationClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
@@ -90,7 +79,7 @@ bool ApplicationClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 //	The new textureshaderclass object is created and initialized.
 
 //	Create and initialize the texture shader object.
-	m_TextureShader = new TextureShaderClass;
+/*	m_TextureShader = new TextureShaderClass;
 
 	result = m_TextureShader->Initialize(m_Direct3D->GetDevice(), hwnd);
 	if (!result)
@@ -99,17 +88,38 @@ bool ApplicationClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 		return false;
 	}
 	return true;
+*/
+//	The light shader object is created and initialized here.
+//	Create and initialize the light shader object.
+	m_LightShader = new LightShaderClass;
+	
+	result = m_LightShader->Initialize(m_Direct3D->GetDevice(), hwnd);
+	if (!result)
+	{
+		MessageBox(hwnd, L"Could not initialize the light shader object.", L"Error", MB_OK);
+		return false;
+	}
+//	The nre light object is created here. The color of the light is set to white and the light
+//	direction is set to point down the positive Z axis.
+//	Create and initialize the light object. 
+	m_Light = new LightClass;
+	m_Light->SetDiffuseColor(1.0f, 1.0f, 1.0f, 1.0f);
+	m_Light->SetDirection(0.0f, 0.0f, 1.0f);
+
+	return true;
 }
 
 void ApplicationClass::Shutdown()
 {
-//	Release the color shader object.
+/*	Release the color shader object.
 	if (m_TextureShader)
 	{
 		m_TextureShader->Shutdown();
 		delete m_TextureShader;
 		m_TextureShader = 0;
 	}
+*/
+
 //	Release the model object.
 	if (m_Model)
 	{
