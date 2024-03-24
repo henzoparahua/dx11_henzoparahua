@@ -61,5 +61,4 @@ private:
 //	This variable will be used to read in and hold the model data before it is placed in the vertex buffer.
 	ModelType* m_model;
 };
-
 #endif
