@@ -25,6 +25,7 @@ ApplicationClass::~ApplicationClass()
 
 bool ApplicationClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 {
+	char modelFilename[128];
 	char textureFilename[128];
 	bool result;
 
@@ -42,34 +43,19 @@ bool ApplicationClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	m_Camera = new CameraClass;
 
 //	Set the initial position of the camera.
-	m_Camera->SetPosition(0.0f, 1.0f, -7.0f);
+	m_Camera->SetPosition(0.0f, 1.0f, -5.0f);
+
+//	Set the file name of the mode.
+	strcpy_s(modelFilename, "cube.txt");
+
+
+// Set the name of the texture file that we will be loading.
+	strcpy_s(textureFilename, "stone.tga");
 
 //	Create and initialize the model object.
 	m_Model = new ModelClass;
 
-/*	result = m_Model->Initialize(m_Direct3D->GetDevice());
-	if (!result)
-	{
-		MessageBox(hwnd, L"Could not initialize the model object.", L"Error", MB_OK);
-		return false;
-	}
-
-	Create and initialize the color shader object.
-	m_ColorShader = new ColorShaderClass;
-	
-	result = m_ColorShader->Initialize(m_Direct3D->GetDevice(), hwnd);
-	if (!result)
-	{
-		MessageBox(hwnd, L"Could not initialize the color shader object", L"Error", MB_OK);
-		return false;
-	}
-*/
-//	The ModelClass::Initialize function now takes in the name of the texture that will be used for
-//	rendering the models as well as the device context.
-// Set the name of the texture file that we will be loading.
-	strcpy_s(textureFilename, "stone.tga");
-
-	result = m_Model->Initialize(m_Direct3D->GetDevice(), m_Direct3D->GetDeviceContext(), textureFilename);
+	result = m_Model->Initialize(m_Direct3D->GetDevice(), m_Direct3D->GetDeviceContext(), modelFilename, textureFilename);
 	if (!result)
 	{
 		MessageBox(hwnd, L"Could not initialize the model object.", L"Error", MB_OK);
@@ -165,7 +151,7 @@ bool ApplicationClass::Frame()
 	bool result;
 
 //	Update the rotation variable each frame.
-	rotation -= 0.0174532925f * 0.1f;
+	rotation -= 0.0174532925f * 0.25f;
 	if (rotation < 0.0f)
 	{
 		rotation += 360.0f;

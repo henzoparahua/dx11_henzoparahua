@@ -5,6 +5,7 @@ ModelClass::ModelClass()
 	m_vertexBuffer = 0;
 	m_indexBuffer = 0;
 	m_Texture = 0;
+	m_model = 0;
 }
 ModelClass::ModelClass(const ModelClass& other)
 {
@@ -12,9 +13,17 @@ ModelClass::ModelClass(const ModelClass& other)
 ModelClass::~ModelClass()
 {
 }
-bool ModelClass::Initialize(ID3D11Device* device, ID3D11DeviceContext* deviceContext, char* textureFilename)
+bool ModelClass::Initialize(ID3D11Device* device, ID3D11DeviceContext* deviceContext, char* modelFilename, char* textureFilename)
 {
 	bool result;
+
+
+//	Load in the model data
+	result = LoadModel(modelFilename);
+	if (!result)
+	{
+		return false;
+	}
 
 //	Initialize the vertex and index buffers.
 	result = InitializeBuffers(device);
@@ -40,6 +49,9 @@ void ModelClass::Shutdown()
 //	Shutdown the vertex and index buffers.
 	ShutdownBuffers();
 
+//	Release the model data
+	ReleaseModel();
+
 	return;
 }
 
@@ -50,7 +62,7 @@ void ModelClass::Shutdown()
 
 void ModelClass::Render(ID3D11DeviceContext* deviceContext)
 {
-//	Put the vertex and index buffers on the graphics pipeline to rpepare them for drawing.
+//	Put the vertex and index buffers on the graphics pipeline to preepare them for drawing.
 	RenderBuffers(deviceContext);
 
 	return;
@@ -82,24 +94,17 @@ bool ModelClass::InitializeBuffers(ID3D11Device* device)
 	D3D11_BUFFER_DESC vertexBufferDesc, indexBufferDesc;
 	D3D11_SUBRESOURCE_DATA vertexData, indexData;
 	HRESULT result;
+	int i;
 
 //	First create two temporary arrays to hold the vertex and index data that we will use 
 //	later to populate the final buffers with.
 //	Set the number of vertices in the vertex array.
-	m_vertexCount = 3;
+//	m_vertexCount = 3;
 
 //	Set the number of indices in the index array.
-	m_indexCount = 3;
+//	m_indexCount = 3;
 
-//	Create the vertex array.
-	vertices = new VertexType[m_vertexCount];
-	if (!vertices)
-	{
-		return false;
-	}
 
-//	Create the index array.
-	indices = new unsigned long[m_indexCount];
 
 //	Now fill both the vertex and index array with the three points of the triangle as well as the
 //	index to each of the points. Please note that I created the points in the clockwise order of
@@ -109,23 +114,23 @@ bool ModelClass::InitializeBuffers(ID3D11Device* device)
 //	of the vertex description.
 
 //	Loaf the vertex array with data.
-	vertices[0].position = XMFLOAT3(-1.0f, -1.0f, 0.0f); // Bottom left.
-	vertices[0].texture = XMFLOAT2(0.0f, 1.0f);
-	vertices[0].normal = XMFLOAT3(0.0f, 0.0f, -1.0f);
-	
-	vertices[1].position = XMFLOAT3(0.0f, 1.0f, 0.0f); // Top middle.
-	vertices[1].texture = XMFLOAT2(0.5f, 0.0f);
-	vertices[1].normal = XMFLOAT3(0.0f, 0.0f, -1.0f);
-
-	vertices[2].position = XMFLOAT3(1.0f, -1.0f, 0.0f); // Bottom right.
-	vertices[2].texture = XMFLOAT2(1.0f, 1.0f);
-	vertices[2].normal = XMFLOAT3(0.0f, 0.0f, -1.0f);
+//	vertices[0].position = XMFLOAT3(-1.0f, -1.0f, 0.0f); // Bottom left.
+//	vertices[0].texture = XMFLOAT2(0.0f, 1.0f);
+//	vertices[0].normal = XMFLOAT3(0.0f, 0.0f, -1.0f);
+//	
+//	vertices[1].position = XMFLOAT3(0.0f, 1.0f, 0.0f); // Top middle.
+//	vertices[1].texture = XMFLOAT2(0.5f, 0.0f);
+//	vertices[1].normal = XMFLOAT3(0.0f, 0.0f, -1.0f);
+//
+//	vertices[2].position = XMFLOAT3(1.0f, -1.0f, 0.0f); // Bottom right.
+//	vertices[2].texture = XMFLOAT2(1.0f, 1.0f);
+//	vertices[2].normal = XMFLOAT3(0.0f, 0.0f, -1.0f);
 
 
 //	Load the index array with data.
-	indices[0] = 0;
-	indices[1] = 1;
-	indices[2] = 2;
+//	indices[0] = 0;
+//	indices[1] = 1;
+//	indices[2] = 2;
 
 //	With the vertex and index array fiddled out we can now use those to create the
 //	vertex buffer and index buffer. Creating both buffers is done in the same fashion.
@@ -135,6 +140,27 @@ bool ModelClass::InitializeBuffers(ID3D11Device* device)
 // 	will point to either your vertex or index array you previously created. With the
 // 	description and subresource pointer you can call CreateBuffer using D3D device and
 // 	it will return a pointer to your new buffer.
+
+
+//	Take note that we will no longer manually set the vertex and index count here.
+//	Once we get to the ModelClass::LoadModel functin you will see that we read the
+// 	vertex and index counts in at that point instead.
+
+//	Create the vertex array.
+	vertices = new VertexType[m_vertexCount];
+
+//	Create the index array.
+	indices = new unsigned long[m_indexCount];
+
+	for (i = 0; i < m_vertexCount; i++)
+	{
+		vertices[i].position = XMFLOAT3(m_model[i].x, m_model[i].y, m_model[i].z);
+		vertices[i].texture = XMFLOAT2(m_model[i].tu, m_model[i].tv);
+		vertices[i].normal = XMFLOAT3(m_model[i].nx, m_model[i].ny, m_model[i].nz);
+
+		indices[i] = i;
+	}
+
 	
 //	Set up the description of the static vertex buffer.
 	vertexBufferDesc.Usage = D3D11_USAGE_DEFAULT;
@@ -267,5 +293,73 @@ void ModelClass::ReleaseTexture()
 		delete m_Texture;
 		m_Texture = 0;
 	}
+	return;
+}
+
+//	This is the new LoadModel function which handles loading the model data from the text into the
+//	m_model array variable. It opens the text file and reads in the vertex count first. After reading
+//	the vertex count it creates the ModelType array and then reads each line into the array. Both the 
+//	vertex count are now set in this function.
+
+bool ModelClass::LoadModel(char* filename)
+{
+	ifstream fin;
+	char input;
+	int i;
+
+//	Open the model file.
+	fin.open(filename);
+
+//	If it could not open the file then exit
+	if (fin.fail())
+	{
+		return false;
+	}
+	fin.get(input);
+	while (input != ':')
+	{
+		fin.get(input);
+	}
+//	Read in the vertex count.
+	fin >> m_vertexCount;
+
+//	Set the number of indices to be the same as the vertex count
+	m_indexCount = m_vertexCount;
+
+//	Create the model using the vertex count that was read in.
+	m_model = new ModelType[m_vertexCount];
+
+//	Read up to the beginning of the data.
+	fin.get(input);
+	while (input != ':')
+	{
+		fin.get(input);
+	}
+	fin.get(input);
+	fin.get(input);
+
+//	Read in the vertex data.
+	for (i = 0; i < m_vertexCount; i++)
+	{
+		fin >> m_model[i].x >> m_model[i].y >> m_model[i].z;
+		fin >> m_model[i].tu >> m_model[i].tv;
+		fin >> m_model[i].nx >> m_model[i].ny >> m_model[i].nz;
+	}
+
+//	Close the model file
+	fin.close();
+
+	return true;
+}
+
+//	The ReleaseModel function handles deleting the model data array.
+void ModelClass::ReleaseModel()
+{
+	if (m_model)
+	{
+		delete[] m_model;
+		m_model = 0;
+	}
+
 	return;
 }

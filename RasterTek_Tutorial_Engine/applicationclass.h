@@ -21,7 +21,6 @@ public:
 	ApplicationClass(const ApplicationClass&);
 	~ApplicationClass();
 
-	bool ChangeScreen(int, int, HWND);
 	bool Initialize(int, int, HWND);
 	void Shutdown();
 	bool Frame();

@@ -52,6 +52,9 @@
   <ItemGroup>
     <Image Include="stone.tga" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="cube.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
